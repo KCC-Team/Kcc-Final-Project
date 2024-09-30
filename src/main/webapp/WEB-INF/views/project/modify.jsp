@@ -2,7 +2,7 @@
 
 <%@ include file="../../../resources/common/common.jsp" %>
 
-<link rel="stylesheet" href="../../../resources/css/modify.css">
+<link rel="stylesheet" href="../../../resources/project/css/modify.css">
 
 <!-- 콘텐츠 영역 -->
 <main class="content" id="content">
@@ -117,6 +117,6 @@
     </div>
 </main>
 
-<script src="../../../resources/js/modify.js"></script>
+<script src="../../../resources/project/js/modify.js"></script>
 
-<%@ include file="../../../resources/common/footer.jsp" %>
+<%@ include file="../footer.jsp" %>

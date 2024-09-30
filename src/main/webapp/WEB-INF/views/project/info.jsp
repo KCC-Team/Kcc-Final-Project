@@ -2,7 +2,7 @@
 
 <%@ include file="../../../resources/common/common.jsp" %>
 
-<link rel="stylesheet" href="../../../resources/css/info.css">
+<link rel="stylesheet" href="../../../resources/project/css/info.css">
 
 <!-- 콘텐츠 영역 -->
 <main class="content" id="content">
@@ -93,4 +93,4 @@
     </div>
 </main>
 
-<%@ include file="../../../resources/common/footer.jsp" %>
+<%@ include file="../footer.jsp" %>

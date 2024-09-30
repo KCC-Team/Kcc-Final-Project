@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<%@ include file="../../resources/common/header.jsp" %>
+<%@ include file="../../../resources/common/header.jsp" %>
 
 <!-- 왼쪽 메뉴 -->
 <aside class="sidebar" id="sidebar">
