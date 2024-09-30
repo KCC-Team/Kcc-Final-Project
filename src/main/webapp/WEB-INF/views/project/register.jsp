@@ -5,9 +5,9 @@
     request.setAttribute("title", title);
 %>
 
-<%@ include file="../../../resources/common/projectHeader.jsp" %>
+<%@ include file="projectHeader.jsp" %>
 
-<link rel="stylesheet" href="../../../resources/css/register.css">
+<link rel="stylesheet" href="../../../resources/project/css/register.css">
 
 <!-- 콘텐츠 영역 -->
 <main class="content" id="content">
@@ -109,7 +109,7 @@
     </div>
 </main>
 
-<script src="../../../resources/js/register.js"></script>
+<script src="../../../resources/project/js/register.js"></script>
 
 </body>
 </html>

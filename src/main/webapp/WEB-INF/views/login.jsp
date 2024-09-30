@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KCC PMS</title>
-    <link rel="stylesheet" href="../../resources/css/login.css">
+    <link rel="stylesheet" href="../../resources/member/login.css">
 </head>
 <body>
 <div class="login-container">
     <!-- 로고 섹션 -->
     <div class="logo">
-        <img src="../../resources/images/main_logo2.png" alt="KCC PMS 로고">
+        <img src="../../resources/common/images/main_logo2.png" alt="KCC PMS 로고">
     </div>
     <!-- 로그인 폼 섹션 -->
     <h2>로그인</h2>

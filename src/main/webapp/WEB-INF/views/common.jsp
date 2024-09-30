@@ -27,7 +27,7 @@
 </button>
 
 <!-- 헤더 -->
-<%@ include file="../../resources/common/header.jsp" %>
+<%@ include file="header.jsp" %>
 
 <!-- 왼쪽 메뉴 -->
 <aside class="sidebar" id="sidebar">

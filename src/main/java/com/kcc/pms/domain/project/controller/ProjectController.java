@@ -1,4 +1,4 @@
-package com.kcc.pms;
+package com.kcc.pms.domain.project.controller;
 
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Controller;

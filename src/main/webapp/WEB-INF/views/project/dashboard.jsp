@@ -2,7 +2,7 @@
 
 <%@ include file="../../../resources/common/common.jsp" %>
 
-<link rel="stylesheet" href="../../../resources/css/dashboard.css">
+<link rel="stylesheet" href="../../../resources/project/css/dashboard.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
@@ -199,6 +199,6 @@
     </div>
 </main>
 
-<script src="../../../resources/js/dashboard.js"></script>
+<script src="../../../resources/project/js/dashboard.js"></script>
 
-<%@ include file="../../../resources/common/footer.jsp" %>
+<%@ include file="../footer.jsp" %>
