@@ -1,3 +1,3 @@
-        <script src="../../resources/common/common.js"></script>
+        <script src="../../../resources/common/js/common.js"></script>
     </body>
 </html>
