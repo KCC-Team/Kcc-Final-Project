@@ -5,7 +5,7 @@
     request.setAttribute("title", title);
 %>
 
-<%@ include file="projectHeader.jsp" %>
+<%@ include file="../project/projectHeader.jsp" %>
 
 <link rel="stylesheet" href="../../../resources/project/css/list.css">
 

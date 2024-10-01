@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ include file="../../../resources/common/common.jsp" %>
+<%@ include file="../common.jsp" %>
 
 <link rel="stylesheet" href="../../../resources/project/css/dashboard.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -9,7 +9,6 @@
 <!-- 콘텐츠 영역 -->
 <main class="content" id="content">
     <div class="main_content">
-
 
         <div class="container">
             <!-- 작업목록 section  -->

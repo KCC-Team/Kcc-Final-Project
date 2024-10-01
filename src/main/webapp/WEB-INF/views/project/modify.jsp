@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ include file="../../../resources/common/common.jsp" %>
+<%@ include file="../common.jsp" %>
 
 <link rel="stylesheet" href="../../../resources/project/css/modify.css">
 
