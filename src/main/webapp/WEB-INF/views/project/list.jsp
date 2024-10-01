@@ -32,7 +32,7 @@
                 <input type="submit" class="search" value="검색">
             </form>
             <div class="action-buttons">
-                <a href="/project/register" class="add-project">
+                <a href="/projects/register" class="add-project">
                     <button class="add-project">+ 프로젝트 등록</button>
                 </a>
             </div>
@@ -54,7 +54,7 @@
             </thead>
             <tbody>
             <tr>
-                <td><a href="/project/dashboard">차세대 프로그램 구축</a></td>
+                <td><a href="/projects/dashboard">차세대 프로그램 구축</a></td>
                 <td><span class="status-label status-in-progress">진행중</span></td>
                 <td>PM01</td>
                 <td>SI개발1팀</td>
@@ -64,7 +64,7 @@
                 <td>1</td>
             </tr>
             <tr>
-                <td><a href="/project/dashboard">B 프로젝트</a></td>
+                <td><a href="/projects/dashboard">B 프로젝트</a></td>
                 <td><span class="status-label status-completed">종료</span></td>
                 <td>PM02</td>
                 <td>SI개발1팀</td>
@@ -74,7 +74,7 @@
                 <td>0</td>
             </tr>
             <tr>
-                <td><a href="/project/dashboard">C 프로젝트</a></td>
+                <td><a href="/projects/dashboard">C 프로젝트</a></td>
                 <td><span class="status-label status-completed">종료</span></td>
                 <td>PM03</td>
                 <td>SI개발2팀</td>

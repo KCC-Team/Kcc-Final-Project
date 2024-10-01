@@ -31,21 +31,6 @@
                         <option value="03">종료</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="progress">진척도 <span class="required-icon">*</span></label>
-                    <select id="progress" name="progress" required>
-                        <option value="">선택하세요.</option>
-                        <%
-                            for (int i = 0; i <= 100; i++) {
-                                int progress = i * 10;
-                                out.println("<option value=\"" + progress + "\">" + progress + "%</option>");
-                                if (progress == 100) {
-                                    break;
-                                }
-                            }
-                        %>
-                    </select>
-                </div>
             </div>
 
             <!-- 주관기관 -->
