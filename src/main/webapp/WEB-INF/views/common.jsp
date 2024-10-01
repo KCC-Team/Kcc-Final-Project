@@ -44,12 +44,11 @@
             </a>
             <ul class="submenu">
                 <li><a href="/project/list"><span class="dot">•</span>프로젝트 현황</a></li>
-                <li><a href="/project/info"><span class="dot">•</span>프로젝트 정보</a></li>
                 <li><a href="/project/dashboard"><span class="dot">•</span>대시보드</a></li>
+                <li><a href="/project/info"><span class="dot">•</span>프로젝트 정보</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 WBS</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 산출물</a></li>
-                <li><a href="#"><span class="dot">•</span>프로젝트 작업</a></li>
-                <li><a href="#"><span class="dot">•</span>요구사항 관리</a></li>
+                <li><a href="#"><span class="dot">•</span>프로젝트 기능</a></li>
             </ul>
         </li>
 
@@ -61,7 +60,7 @@
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>인력현황</a></li>
                 <li><a href="#"><span class="dot">•</span>투입인력관리</a></li>
-                <li><a href="#"><span class="dot">•</span>참여인력관리</a></li>
+                <li><a href="#"><span class="dot">•</span>고객관리</a></li>
             </ul>
         </li>
 
@@ -73,6 +72,7 @@
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>내 기능</a></li>
                 <li><a href="#"><span class="dot">•</span>내 이슈</a></li>
+                <li><a href="#"><span class="dot">•</span>내 산출물</a></li>
             </ul>
         </li>
 
@@ -84,6 +84,8 @@
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>위험 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>이슈 관리</a></li>
+                <li><a href="#"><span class="dot">•</span>결함 관리</a></li>
+                <li><a href="#"><span class="dot">•</span>요구사항 관리</a></li>
             </ul>
         </li>
 
@@ -95,7 +97,6 @@
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>단위 테스트 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>통합 테스트 관리</a></li>
-                <li><a href="#"><span class="dot">•</span>결함 관리</a></li>
             </ul>
         </li>
 
@@ -106,7 +107,6 @@
             </a>
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>공지사항</a></li>
-                <li><a href="#"><span class="dot">•</span>일정 관리</a></li>
             </ul>
         </li>
 
