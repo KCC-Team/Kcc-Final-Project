@@ -32,7 +32,7 @@
 <!-- 왼쪽 메뉴 -->
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <a href="/project/dashboard">
+        <a href="/projects/dashboard">
             <img src="../../../resources/common/images/main_logo1.png" alt="Project Logo">
         </a>
     </div>
@@ -43,9 +43,9 @@
                 <i class="fas fa-chevron-down toggle-arrow"></i>
             </a>
             <ul class="submenu">
-                <li><a href="/project/list"><span class="dot">•</span>프로젝트 현황</a></li>
-                <li><a href="/project/dashboard"><span class="dot">•</span>대시보드</a></li>
-                <li><a href="/project/info"><span class="dot">•</span>프로젝트 정보</a></li>
+                <li><a href="/projects/list"><span class="dot">•</span>프로젝트 현황</a></li>
+                <li><a href="/projects/dashboard"><span class="dot">•</span>대시보드</a></li>
+                <li><a href="/projects/info"><span class="dot">•</span>프로젝트 정보</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 WBS</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 산출물</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 기능</a></li>

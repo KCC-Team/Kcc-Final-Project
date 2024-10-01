@@ -20,7 +20,7 @@
                 <input type="text" id="title" name="title" value="차세대 프로그램 구축">
             </div>
 
-            <!-- 상태 & 진척도 -->
+            <!-- 상태 -->
             <div class="form-row">
                 <div class="form-group">
                     <label for="status">상태 <span class="required-icon">*</span></label>
@@ -28,29 +28,6 @@
                         <option value="01">선택하세요.</option>
                         <option value="02" selected>진행중</option>
                         <option value="03">종료</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="progress">진척도 <span class="required-icon">*</span></label>
-                    <select id="progress" name="progress">
-                        <option value="">선택하세요.</option>
-                        <%
-                            int progress_data = 30;
-                            for (int i = 0; i <= 10; i++) {
-                                int progress = i * 10;
-                                String selected = "";
-
-                                if (progress_data == progress) {
-                                    selected = "selected";
-                                }
-
-                                out.println("<option value=\"" + progress + "\" " + selected + ">" + progress + "%</option>");
-
-                                if (progress == 100) {
-                                    break;
-                                }
-                            }
-                        %>
                     </select>
                 </div>
             </div>

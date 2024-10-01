@@ -93,6 +93,16 @@ input[type="date"] {
     font-size: 14px;
 }
 
+#status {
+    width: 48%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
 textarea {
     height: 100px;
 }

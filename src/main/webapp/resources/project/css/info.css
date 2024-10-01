@@ -52,7 +52,7 @@ select {
     width: calc(100% - 10px);
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
@@ -61,7 +61,7 @@ input[type="text"] {
     width: 48%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
@@ -70,7 +70,7 @@ input[type="text"] {
     width: 99%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
@@ -79,7 +79,7 @@ input[type="date"] {
     width: 23%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
@@ -88,20 +88,29 @@ input[type="date"] {
     width: calc(100% - 10px);
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
-
 
 #pm_id {
     width: 49%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border-width: 0;
     border-radius: 4px;
     font-size: 14px;
 }
+
+#status {
+    width: 48%;
+    padding: 8px;
+    margin-top: 5px;
+    border-width: 0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
 
 textarea {
     height: 100px;
@@ -201,6 +210,7 @@ button.del-btn a {
 
 .no-period {
     width: 26%;
+    font-weight: normal;
 }
 
 #no_days_period, #no_predays_period {

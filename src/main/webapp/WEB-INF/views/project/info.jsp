@@ -20,15 +20,11 @@
                 <input type="text" id="title" name="title" value="차세대 프로그램 구축" disabled="disabled">
             </div>
 
-            <!-- 상태 & 진척도 -->
+            <!-- 상태 -->
             <div class="form-row">
                 <div class="form-group">
                     <label for="status">상태 <span class="required-icon">*</span></label>
                     <input type="text" id="status" name="status" value="진행중" disabled="disabled">
-                </div>
-                <div class="form-group">
-                    <label for="progress">진척도 <span class="required-icon">*</span></label>
-                    <input type="text" id="progress" name="progress" value="30%" disabled="disabled">
                 </div>
             </div>
 
@@ -81,7 +77,7 @@
             </span>
 
             <div class="form-actions">
-                <a href="/project/modify" class="modify-btn">
+                <a href="/projects/modify" class="modify-btn">
                     <i class="fa-solid fa-check"></i>&nbsp; 수정
                 </a>
                 <button type="button" class="del-btn" onclick="#">
