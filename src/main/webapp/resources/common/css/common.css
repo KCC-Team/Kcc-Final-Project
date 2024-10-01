@@ -179,7 +179,7 @@ body {
 
 /* 콘텐츠 영역 */
 .content {
-    margin-left: 185px;
+    margin-left: 210px;
     flex: 1;
     transition: margin-left 0.3s ease;
 }
@@ -265,7 +265,13 @@ body {
 .main_content {
     background-color: white;
     height: 95%;
-    margin-top: 73px;
+    margin: 75px 50px 50px 50px;
+}
+
+.main_content {
+    background-color: white;
+    height: 95%;
+    margin: 100px 25px 50px 25px;
 }
 
 .header-project-name {

@@ -46,7 +46,7 @@
                 <li><a href="/projects/list"><span class="dot">•</span>프로젝트 현황</a></li>
                 <li><a href="/projects/dashboard"><span class="dot">•</span>대시보드</a></li>
                 <li><a href="/projects/info"><span class="dot">•</span>프로젝트 정보</a></li>
-                <li><a href="#"><span class="dot">•</span>프로젝트 WBS</a></li>
+                <li><a href="/projects/wbsList"><span class="dot">•</span>프로젝트 WBS</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 산출물</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 기능</a></li>
             </ul>
