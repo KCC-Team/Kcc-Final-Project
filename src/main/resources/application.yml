@@ -2,7 +2,48 @@ server:
   port: 8085
   
 spring:
+  profiles:
+    active: dev
+    include: secret
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+  servlet:
+    multipart:
+      enabled: true
+  h2:
+    console:
+      enabled: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.kcc.pms.domain
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:oracle:thin:@localhost:${db.port}/xe
+    #    url: jdbc:log4jdbc:oracle:thin:@localhost:${db.port}:xe
+    username: ${db.username}
+    password: ${db.password}
+    driver-class-name: oracle.jdbc.OracleDriver
+  #    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+

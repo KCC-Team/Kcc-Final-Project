@@ -1,14 +1,11 @@
-package com.kcc.pms;
+package com.kcc.pms.domain.common.controller;
 
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@NoArgsConstructor
-public class MainController {
+public class CommonController {
 
-    // 로그인
     @GetMapping("/login")
     public String login() {
         return "login";
