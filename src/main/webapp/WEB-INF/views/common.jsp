@@ -82,7 +82,7 @@
                 <i class="fas fa-chevron-down toggle-arrow"></i>
             </a>
             <ul class="submenu">
-                <li><a href="#"><span class="dot">•</span>위험 관리</a></li>
+                <li><a href="/projects/dangers"><span class="dot">•</span>위험 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>이슈 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>결함 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>요구사항 관리</a></li>
