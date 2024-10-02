@@ -16,7 +16,7 @@
     </div>
     <!-- 로그인 폼 섹션 -->
     <h2>로그인</h2>
-    <form action="/project/list" method="get" class="login-form">
+    <form action="/projects/list" method="get" class="login-form">
         <div class="input-group">
             <input type="text" placeholder="아이디" name="username" required>
         </div>
