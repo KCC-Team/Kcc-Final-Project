@@ -25,7 +25,7 @@
 <!-- 샘플 데이터 -->
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ taglib uri="http://jakarta.ee/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
     // 데이터 목록 준비
@@ -61,11 +61,11 @@
                             <span class="me-3">폴더: <label class="folder-cnt fw-normal">2</label></span>
                             <span>문서: <label class="docs-cnt fw-normal">3</label></span>
                             <span class="ms-auto d-flex justify-content-end">
-                            <button class="custom-button" type="button">&nbsp;산출물 등록하기&nbsp;</button>&nbsp;&nbsp;&nbsp;
-                            <button class="custom-button me-2" type="button">&nbsp;<i class="fa-regular fa-folder"></i>&nbsp;&nbsp;위치 편집&nbsp;</button>
-                        </span>
+                                <button class="custom-button" type="button">&nbsp;산출물 등록하기&nbsp;</button>&nbsp;&nbsp;&nbsp;
+                                <button class="custom-button modify-btn me-2" type="button">&nbsp;<i class="fa-regular fa-folder"></i>&nbsp;&nbsp;위치 편집&nbsp;</button>
+                            </span>
                         </div>
-                        <section class="d-flex justify-content-between" style="height: 50%; margin-left: 11px;">
+                        <section class="d-flex justify-content-between" style="height: 70%; margin-left: 11px;">
                             <section class="first-component">
                                 <div class="fir-com-header d-flex justify-content-center align-items-center">
                                     파일명
@@ -88,8 +88,27 @@
                                     <br>
                                     <div>
                                         <h5 class="text-black">&nbsp;&nbsp;&nbsp;연결 작업</h5>
-                                        <a href="#" class="text-black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연결 작업 1</a>
-
+                                        <c:forEach var="task" items="${tasks}">
+                                            <a href="#" class="task ms-4">${task}</a>
+                                            <br>
+                                        </c:forEach>
+                                    </div>
+                                    <br>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <h5 class="text-black me-3">&nbsp;&nbsp;&nbsp;파일 목록</h5>
+                                        <span class="label me-5">파일: <label id="detail-cnt">3</label></span>
+                                        <button type="button" class="green-btn me-2">&nbsp;&nbsp;&nbsp;선택 다운로드&nbsp;&nbsp;&nbsp;</button>
+                                        <button type="button" class="red-btn">&nbsp;&nbsp;&nbsp;선택 삭제&nbsp;&nbsp;&nbsp;</button>
+                                        <button type="button" class="custom-button ms-auto me-3 d-flex justify-content-end">&nbsp;&nbsp;파일 추가&nbsp;&nbsp;</button>
+                                    </div>
+                                    <div class="ax5-ui">
+                                        <div data-ax5grid="first-grid" data-ax5grid-config="{
+                                            showRowSelector: true,
+                                            multipleSelect: true,
+                                            lineNumberColumnWidth: 40,
+                                            rowSelectorColumnWidth: 27,
+                                            }" style="height: 300px;">
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -99,11 +118,9 @@
             </div>
         </div>
     </div>
-    <!-- CSS -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
     <script src="../../../resources/output/js/list.js"></script>
