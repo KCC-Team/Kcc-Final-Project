@@ -15,4 +15,9 @@ public class DangerController {
     public String danger(){
         return "danger/danger_list";
     }
+
+    @GetMapping("/dangerInfo")
+    public String dangerInfo() {
+        return "danger/info";
+    }
 }

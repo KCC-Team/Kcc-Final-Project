@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 * {
+    font-family: 'Pretendard-Regular';
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -119,6 +127,10 @@ body {
     margin-left: 5px;
 }
 
+.sidebar.hidden .prj-all-list {
+    display: none;
+}
+
 .sidebar-header {
     display: flex;
     align-items: center;
@@ -141,7 +153,7 @@ body {
     list-style: none;
     padding: 0;
     margin-left: 10px;
-    margin-top: 25px;
+    margin-top: 13px;
 }
 
 .menu > li {
@@ -226,7 +238,7 @@ body {
 }
 
 .arrow {
-    font-size: 1.45rem;
+    font-size: 1.15rem;
 }
 
 .submenu {
@@ -271,7 +283,7 @@ body {
 .main_content {
     background-color: white;
     height: 95%;
-    margin: 100px 25px 50px 25px;
+    margin: 90px 25px 50px 25px;
 }
 
 .header-project-name {
@@ -280,5 +292,5 @@ body {
 
 .header-project-name > .dropdown-toggle{
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
 }

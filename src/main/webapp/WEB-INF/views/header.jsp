@@ -18,7 +18,7 @@
         <% } %>
     </div>
     <div class="header-icons">
-        <i class="fa-regular fa-comment-dots"></i>  <!-- 채팅 아이콘 -->
+        <i class="fa-solid fa-folder-open"></i>     <!-- 폴더 아이콘 -->
         <i class="fas fa-bell"></i>                 <!-- 알림 아이콘 -->
         <i class="fa-regular fa-envelope"></i>      <!-- 이메일 메뉴 아이콘 -->
         <div class="dropdown header-user-name">
