@@ -2,7 +2,6 @@
 
 <%@ include file="../common.jsp" %>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/ax5ui/ax5core/master/dist/ax5core.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/ax5ui/ax5ui-grid/master/dist/ax5grid.min.js"></script>
 <link rel="stylesheet" href="../../../resources/danger/css/danger.css">
@@ -10,10 +9,10 @@
 
 <main class="content" id="content">
     <div class="main_content">
-        <h5>위험현황</h5>
+        <h5>이슈현황</h5>
 
         <div class="filter-section">
-            <form action="#" method="post">
+            <form action="#" method="post" enctype="multipart/form-data">
                 상태
                 <select name="status">
                     <option>전체</option>
@@ -25,8 +24,8 @@
                 <input type="submit" class="search" value="검색">
             </form>
             <div class="action-buttons">
-                <a href="/projects/dangerInfo?type=register">
-                    <button class="add-project">+ 위험등록</button>
+                <a href="/projects/issueInfo?type=register">
+                    <button class="add-project">+ 이슈등록</button>
                 </a>
                 <a href="#">
                     <button class="danger-export-excel"><i class="fa-solid fa-download"></i> 액셀받기</button>
@@ -50,5 +49,6 @@
     </div>
 </main>
 
-<script src="../../../resources/danger/js/danger.js"></script>
+<script src="../../../resources/issue/js/list.js"></script>
+
 <%@ include file="../footer.jsp" %>

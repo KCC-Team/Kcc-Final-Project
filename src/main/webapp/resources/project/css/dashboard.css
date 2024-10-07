@@ -204,8 +204,9 @@ canvas {
 
 .pj-date {
     background-color: #D9E5FF;
-    width: 57%;
+    width: 70%;
     text-align: center;
+    font-size: 13px;
 }
 
 .stat-box {
@@ -231,6 +232,7 @@ canvas {
     font-size: 25px;
     color: #ccc;
     margin-right: 15px;
+    margin-top: 43px;
 }
 
 .stat-box-content {
@@ -260,7 +262,7 @@ canvas {
 .card-footer a {
     text-decoration: none;
     color: #888;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .arrow {

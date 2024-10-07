@@ -37,18 +37,23 @@
         </a>
     </div>
     <ul class="menu">
+        <li class="prj-all-list">
+            <a href="/projects/list">
+                전체 프로젝트 목록
+            </a>
+        </li>
         <li>
             <a href="#">
                 <i class="fas fa-box"></i><span>프로젝트</span>
                 <i class="fas fa-chevron-down toggle-arrow"></i>
             </a>
             <ul class="submenu">
-                <li><a href="/projects/list"><span class="dot">•</span>프로젝트 현황</a></li>
                 <li><a href="/projects/dashboard"><span class="dot">•</span>대시보드</a></li>
                 <li><a href="/projects/info"><span class="dot">•</span>프로젝트 정보</a></li>
                 <li><a href="/projects/wbsList"><span class="dot">•</span>프로젝트 WBS</a></li>
-                <li><a href="#"><span class="dot">•</span>프로젝트 산출물</a></li>
                 <li><a href="#"><span class="dot">•</span>프로젝트 기능</a></li>
+                <li><a href="#"><span class="dot">•</span>시스템 / 업무 관리</a></li>
+
             </ul>
         </li>
 
@@ -66,24 +71,12 @@
 
         <li>
             <a href="#">
-                <i class="fas fa-tasks"></i><span>내 업무</span>
-                <i class="fas fa-chevron-down toggle-arrow"></i>
-            </a>
-            <ul class="submenu">
-                <li><a href="#"><span class="dot">•</span>내 기능</a></li>
-                <li><a href="#"><span class="dot">•</span>내 이슈</a></li>
-                <li><a href="#"><span class="dot">•</span>내 산출물</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="#">
                 <i class="fas fa-briefcase"></i><span>일반업무</span>
                 <i class="fas fa-chevron-down toggle-arrow"></i>
             </a>
             <ul class="submenu">
                 <li><a href="/projects/dangers"><span class="dot">•</span>위험 관리</a></li>
-                <li><a href="#"><span class="dot">•</span>이슈 관리</a></li>
+                <li><a href="/projects/issues"><span class="dot">•</span>이슈 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>결함 관리</a></li>
                 <li><a href="#"><span class="dot">•</span>요구사항 관리</a></li>
             </ul>
@@ -95,8 +88,7 @@
                 <i class="fas fa-chevron-down toggle-arrow"></i>
             </a>
             <ul class="submenu">
-                <li><a href="#"><span class="dot">•</span>단위 테스트 관리</a></li>
-                <li><a href="#"><span class="dot">•</span>통합 테스트 관리</a></li>
+                <li><a href="#"><span class="dot">•</span>테스트 관리</a></li>
             </ul>
         </li>
 
@@ -107,6 +99,7 @@
             </a>
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>공지사항</a></li>
+                <li><a href="#"><span class="dot">•</span>캘린더</a></li>
             </ul>
         </li>
 
