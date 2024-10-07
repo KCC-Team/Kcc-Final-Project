@@ -1,0 +1,155 @@
+.member-content {
+    display: flex;
+    padding-top: 15px;
+}
+
+.member-info {
+    width: 100%;
+    margin: 1px 20px 20px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 18px;
+    gap: 20px;
+}
+
+.left-section {
+    flex: 0.8;
+    background-color: white;
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.sidebar-table1 {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.sidebar-table1 th, .sidebar-table1 td {
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+.main-content {
+    flex: 2;
+    background-color: #fff;
+    padding: 0px 20px 20px 0px;
+}
+
+.header1 {
+    font-size: 24px;
+    color: #3366cc;
+    margin-bottom: 20px;
+    background-color: #EBEEF3;
+}
+
+.team-overview, .team-members, .member-detail {
+    margin-bottom: 30px;
+}
+
+.overview-table, .members-table, .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.team-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.overview-table td, .members-table th, .members-table td, .detail-table td, .team-table td {
+    border: 1px solid #ccc;
+    padding: 9px;
+}
+
+.members-table thead th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+}
+
+.members-table tbody td {
+    text-align: center;
+}
+
+.team-table select {
+    width: 100%;
+    padding: 8px;
+}
+
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.button-group > button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group > button:hover {
+    background-color: #45a049;
+}
+
+.member-detail table {
+    margin-bottom: 20px;
+}
+
+.member-detail h4 {
+    margin-bottom: 10px;
+}
+
+.member-title {
+    color: #000;
+    padding-left: 5px;
+}
+
+.team-title {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.team-overview-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.btn-group {
+    gap: 10px;
+}
+
+.btn-group > button {
+    padding: 4px 10px 4px 10px;
+    background-color: #717070;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.members-table a {
+    text-decoration: none;
+}
