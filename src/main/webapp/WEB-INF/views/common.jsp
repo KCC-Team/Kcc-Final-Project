@@ -64,7 +64,7 @@
             </a>
             <ul class="submenu">
                 <li><a href="#"><span class="dot">•</span>인력현황</a></li>
-                <li><a href="#"><span class="dot">•</span>투입인력관리</a></li>
+                <li><a href="/projects/members"><span class="dot">•</span>투입인력관리</a></li>
                 <li><a href="#"><span class="dot">•</span>고객관리</a></li>
             </ul>
         </li>
