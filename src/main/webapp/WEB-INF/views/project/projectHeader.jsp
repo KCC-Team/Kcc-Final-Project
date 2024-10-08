@@ -20,6 +20,6 @@
 <!-- 왼쪽 메뉴 -->
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <img src="../../../resources/common/images/main_logo1.png" alt="Project Logo">
+        <img src="../../../resources/common/images/main_logo.png" alt="Project Logo">
     </div>
 </aside>

@@ -294,3 +294,40 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+
+.green-btn {
+    background-color: #65f16b;
+    color: #000;
+    height: 25px;
+    border: 1px solid #8B8B8B;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.green-btn:hover {
+    background-color: #5BAD5E;
+    animation: pulse 2s infinite;
+}
+
+.red-btn {
+    background-color: #f55e5e;
+    color: #fff;
+    height: 25px;
+    border: 1px solid #8B8B8B;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.red-btn:hover {
+    background-color: #D43C3C;
+}

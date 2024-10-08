@@ -7,7 +7,7 @@
             <span><%=title%></span>
         <% } else { %>
             <div class="dropdown header-project-name">
-                <a class="btn dropdown-toggle project-title" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn dropdown-toggle project-title fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     차세대 프로그램 구축
                 </a>
                 <ul class="dropdown-menu">
@@ -18,7 +18,7 @@
         <% } %>
     </div>
     <div class="header-icons">
-        <i class="fa-solid fa-folder-open"></i>     <!-- 폴더 아이콘 -->
+        <a href="/outputs/list"><i class="fa-solid fa-folder-open"></i></a>     <!-- 폴더 아이콘 -->
         <i class="fas fa-bell"></i>                 <!-- 알림 아이콘 -->
         <i class="fa-regular fa-envelope"></i>      <!-- 이메일 메뉴 아이콘 -->
         <div class="dropdown header-user-name">
