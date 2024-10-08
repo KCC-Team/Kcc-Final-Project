@@ -25,7 +25,6 @@
 <!-- 샘플 데이터 -->
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
     // 데이터 목록 준비

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
     String title = (String) request.getAttribute("titleName");
@@ -33,7 +34,7 @@
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <a href="/projects/dashboard">
-            <img src="../../../resources/common/images/main_logo1.png" alt="Project Logo">
+            <img src="../../resources/common/images/main_logo.png" alt="Project Logo">
         </a>
     </div>
     <ul class="menu">
