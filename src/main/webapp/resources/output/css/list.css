@@ -102,3 +102,27 @@ input.input-area:disabled {
 .ax5-ui {
     border: 1px solid #C5C5C5;
 }
+
+.file-btn {
+    text-align: center;
+    height: 18px;
+    background-color: #646464;
+    border-radius: 2px;
+    color: white;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.file-btn:hover {
+    background-color: #AFABAB;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #3D79EE;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}

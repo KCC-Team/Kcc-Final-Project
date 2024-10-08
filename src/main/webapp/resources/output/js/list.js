@@ -172,29 +172,115 @@ $(function () {
     });
 });
 
+let gridData = [
+    {
+        fileName: "A 업무 시스템 요구사항 정의서_1",
+        fileType: "xls/xlsx",
+        size: "2.1MB",
+        version: "0.1",
+        date: "2024-02-17",
+        author: "이수호"
+    },
+    {
+        fileName: "A 업무 시스템 요구사항 정의서_2",
+        fileType: "xls/xlsx",
+        size: "1.77MB",
+        version: "0.1",
+        date: "2024-02-17",
+        author: "이수호"
+    }
+];
 $(function () {
-    let API_SERVER = "http://api-demo.ax5.io";
-    let firstGrid = new ax5.ui.grid();
-
-    firstGrid.setConfig({
-        target: $('[data-ax5grid="first-grid"]'),
+    let grid = new ax5.ui.grid();
+    grid.setConfig({
+        target: $('[data-ax5grid="my-grid"]'),
+        showRowSelector: true,
+        multipleSelect: true,
         columns: [
-            {key: "a", label: "field A"},
-            {key: "b", label: "field B"},
-            {key: "c", label: "numbers C"},
-            {key: "d", label: "field D"},
-            {key: "e", label: "field E"},
-            {key: "f", label: "field F"},
+            {
+                key: "fileName",
+                label: "파일명",
+                width: 180,
+                align: "center",
+                formatter: function () {
+                    return `<button onclick="openModal('${this.item.fileName}', gridData)" class="btn-link">${this.item.fileName}</button>`;
+                }
+            },
+            {key: "fileType", label: "파일형식", width: 80, align: "center"},
+            {key: "size", label: "용량", width: 80, align: "center"},
+            {key: "version", label: "버전", width: 60, align: "center"},
+            {key: "date", label: "날짜", width: 100, align: "center"},
+            {key: "author", label: "작성자", width: 60, align: "center"},
+            {
+                key: null,
+                label: "작업",
+                width: 100,
+                align: "center",
+                formatter: function () {
+                    return `
+                                <div class="me-5">
+                                    <button class="ms-1 file-btn" data-file="${this.item.fileName}">&nbsp;다운로드&nbsp;</button>
+                                    <button class="file-btn" data-file="${this.item.fileName}">&nbsp;업로드&nbsp;</button>
+                                </div>
+                            `;
+                }
+            }
         ]
     });
-    firstGrid.setData(gridList);
-    // 그리드 데이터 가져오기
-    $.ajax({
-        method: "GET",
-        url: API_SERVER + "/api/v1/ax5grid",
-        success: function (res) {
-            res[0].__disable_selection__ = true;
-            firstGrid.setData(res);
-        }
+
+    grid.setData(gridData);
+    $('#detail-cnt').text(gridData.length);
+    $(document).on('click', '.btn-download', function () {
+        let fileName = $(this).data('file');
+        // 다운로드 로직 구현
+        alert(fileName + ' 다운로드 버튼 클릭됨');
+    });
+
+    $(document).on('click', '.btn-upload', function () {
+        let fileName = $(this).data('file');
+        // 업로드 로직 구현
+        alert(fileName + ' 업로드 버튼 클릭됨');
     });
 });
+
+function openModal(fileName, gridData) {
+    // 파일명에 따라 파일 데이터를 가져오는 로직 구현
+    // 예시를 위해 gridData에서 해당 파일을 찾습니다.
+    const fileData = gridData.find(item => item.fileName === fileName);
+
+    if (!fileData) {
+        alert('파일 정보를 찾을 수 없습니다.');
+        return;
+    }
+
+    // 파일 정보를 모달에 표시
+    $('#fileName').text(fileData.fileName);
+    $('#fileSize').text(fileData.size);
+    $('#fileVersion').text(fileData.version);
+    $('#fileType').text(fileData.fileType);
+
+    // 버전 히스토리를 가져오는 로직 구현
+    // 여기서는 예시로 하드코딩된 데이터를 사용합니다.
+    const versionHistory = [
+        { fileName: fileData.fileName + " 3차", fileSize: "1.77 MB", registeredOn: "2024-01-29", fileType: "xls/xlsx" },
+        { fileName: fileData.fileName + " 2차", fileSize: "1.58 MB", registeredOn: "2024-01-11", fileType: "xls/xlsx" },
+        { fileName: fileData.fileName + " 초안", fileSize: "1.26 MB", registeredOn: "2024-01-03", fileType: "xls/xlsx" }
+    ];
+
+    const versionHistoryTable = $('#versionHistory');
+    versionHistoryTable.empty(); // 기존 내용 삭제
+
+    versionHistory.forEach(function(item) {
+        const row = `
+            <tr>
+                <td>${item.fileName}</td>
+                <td>${item.fileSize}</td>
+                <td>${item.registeredOn}</td>
+                <td>${item.fileType}</td>
+            </tr>
+        `;
+        versionHistoryTable.append(row);
+    });
+
+    $('#fileModal').modal('show');
+}

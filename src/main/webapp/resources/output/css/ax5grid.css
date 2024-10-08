@@ -1171,29 +1171,29 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td.hasBorder {
-    /*border-right: 1px solid #ccc;*/
-    /*border-bottom: 1px solid #ccc*/
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
 }
 
-/*[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td.focused {*/
-/*    box-shadow: inset 0px 0px 1px 1px #0581f2*/
-/*}*/
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td.focused {
+    box-shadow: inset 0px 0px 1px 1px #0581f2
+}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-row="null"] {
     border-right: 0 none
 }
 
-/*[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-selected] {*/
-/*    background: #b1d7fe;*/
-/*    border-color: #ccc;*/
-/*    color: #000*/
-/*}*/
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-selected] {
+    background: #b1d7fe;
+    border-color: #ccc;
+    color: #000
+}
 
-/*[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-focused] {*/
-/*    box-shadow: inset 0px 0px 1px 1px #0581f2;*/
-/*    background: #e3f1ff;*/
-/*    color: #000*/
-/*}*/
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-focused] {
+    box-shadow: inset 0px 0px 1px 1px #0581f2;
+    background: #e3f1ff;
+    color: #000
+}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-attr="rowSelector"] {
     cursor: pointer
@@ -1202,7 +1202,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-attr="rowSelector"] .checkBox {
     display: block;
     position: relative;
-    /*border: 1px solid #ccc;*/
+    border: 1px solid #ccc;
     border-radius: 3px;
     background-color: #fff;
     background-image: -webkit-linear-gradient(top, #fff,#F0F0F0);
@@ -1218,7 +1218,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
     position: absolute;
     top: 20%;
     right: 20%;
-    /*border: 0.2em solid #3372ff;*/
+    border: 0.2em solid #3372ff;
     border-top: none;
     border-right: none;
     background: transparent;
@@ -1294,7 +1294,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] [data-ax5grid-editor="checkbox"] {
     display: inline-block;
     position: relative;
-    /*border: 1px solid #ccc;*/
+    border: 1px solid #ccc;
     border-radius: 3px;
     background-color: #fff;
     background-image: -webkit-linear-gradient(top, #fff,#F0F0F0);
@@ -1309,7 +1309,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
     position: absolute;
     top: 20%;
     right: 20%;
-    /*border: 0.2em solid #3372ff;*/
+    border: 0.2em solid #3372ff;
     border-top: none;
     border-right: none;
     background: transparent;
@@ -1351,7 +1351,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="aside-header"] {
-    /*border-right: 1px solid #ccc*/
+    border-right: 1px solid #ccc
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="aside-header"] table tr td {
@@ -1359,7 +1359,7 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-aside-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="aside-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-aside-body"] {
-    /*border-right: 1px solid #ccc;*/
+    border-right: 1px solid #ccc;
     background: #f2f2f2
 }
 
@@ -1373,15 +1373,15 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="left-header"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-left-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="left-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-left-body"] {
-    /*border-right: 1px solid #b3b3b3*/
+    border-right: 1px solid #b3b3b3
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-aside-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-left-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="top-right-body"] {
-    /*border-bottom: 1px solid #b3b3b3*/
+    border-bottom: 1px solid #b3b3b3
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-aside-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-left-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-right-body"] {
-    /*border-top: 1px solid #b3b3b3*/
+    border-top: 1px solid #b3b3b3
 }
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-aside-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-left-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-body"],[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel][data-ax5grid-panel="bottom-right-body"] {

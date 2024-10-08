@@ -48,7 +48,7 @@
                     <div class="d-flex justify-content-end align-items-center">
                         <input type="text" class="form-control w-25" id="search" placeholder="산출물 이름을 입력해주세요.">
                         &nbsp;&nbsp;
-                        <button id="search-btn" class="custom-button d-flex align-items-center">&nbsp;&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        <button id="search-btn" class="custom-button d-flex align-items-center me-3">&nbsp;&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;&nbsp;</button>
                     </div>
                     <section class="output-figure mt-3">
                         <div class="table-header d-flex justify-content-end align-items-center border-bottom mb-3">
@@ -95,18 +95,15 @@
                                     <br>
                                     <div class="d-flex align-items-center mb-1">
                                         <h5 class="text-black me-3">&nbsp;&nbsp;&nbsp;파일 목록</h5>
-                                        <span class="label me-5">파일: <label id="detail-cnt">3</label></span>
+                                        <span class="label me-5">파일: &nbsp;<label id="detail-cnt">0</label></span>
                                         <button type="button" class="green-btn me-2">&nbsp;&nbsp;&nbsp;선택 다운로드&nbsp;&nbsp;&nbsp;</button>
                                         <button type="button" class="red-btn">&nbsp;&nbsp;&nbsp;선택 삭제&nbsp;&nbsp;&nbsp;</button>
                                         <button type="button" class="custom-button ms-auto me-3 d-flex justify-content-end">&nbsp;&nbsp;파일 추가&nbsp;&nbsp;</button>
                                     </div>
-                                    <div class="ax5-ui">
-                                        <div data-ax5grid="first-grid" data-ax5grid-config="{
-                                            showRowSelector: true,
-                                            multipleSelect: true,
-                                            lineNumberColumnWidth: 40,
-                                            rowSelectorColumnWidth: 27,
-                                            }" style="height: 300px;">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="ax5-ui" style="width: 97%;">
+                                            <div data-ax5grid="my-grid" style="height: 300px;">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -118,6 +115,8 @@
         </div>
     </div>
 
+    <!-- 동적 파일 상세 모달 -->
+    <jsp:include page="file-detail-modal.jsp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
