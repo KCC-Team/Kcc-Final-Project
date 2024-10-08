@@ -40,6 +40,7 @@ $(function () {
         },
     ];
 
+    // treeData를 jsTree 데이터로 변환하는 함수
     function convertToJsTreeData(nodes, parentId) {
         let jsTreeData = [];
         nodes.forEach(function(node) {
@@ -137,7 +138,7 @@ $(function () {
     }
 
     // 위치 편집 버튼 클릭 이벤트
-    $(".modify-icon").on("click", function () {
+    $(".modify-btn").on("click", function () {
         // 텍스트 확인하여 상태 변경
         let isEditing = $(this).text().includes("위치 편집");
         $(this).html(
@@ -159,14 +160,41 @@ $(function () {
     $('#jstree').jstree(true).settings.dnd.is_draggable = function () { return false; };
 
     $('#search').on('keypress', function(e) {
-        if (e.which == 13) { // 엔터 키 코드
-            var v = $(this).val();
+        if (e.which === 13) { // 엔터 키 코드
+            let v = $(this).val();
             $('#jstree').jstree(true).search(v);
         }
     });
 
     $('#search-btn').on('click', function() {
-        var v = $('#search').val();
+        let v = $('#search').val();
         $('#jstree').jstree(true).search(v);
+    });
+});
+
+$(function () {
+    let API_SERVER = "http://api-demo.ax5.io";
+    let firstGrid = new ax5.ui.grid();
+
+    firstGrid.setConfig({
+        target: $('[data-ax5grid="first-grid"]'),
+        columns: [
+            {key: "a", label: "field A"},
+            {key: "b", label: "field B"},
+            {key: "c", label: "numbers C"},
+            {key: "d", label: "field D"},
+            {key: "e", label: "field E"},
+            {key: "f", label: "field F"},
+        ]
+    });
+    firstGrid.setData(gridList);
+    // 그리드 데이터 가져오기
+    $.ajax({
+        method: "GET",
+        url: API_SERVER + "/api/v1/ax5grid",
+        success: function (res) {
+            res[0].__disable_selection__ = true;
+            firstGrid.setData(res);
+        }
     });
 });
