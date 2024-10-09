@@ -14,4 +14,10 @@ public class MemberController {
     public String members() {
         return "member/list";
     }
+
+    @GetMapping("/addMember")
+    public String addMember() {
+        System.out.println("caaaaaaaaaaa");
+        return "member/memberRegister";
+    }
 }
