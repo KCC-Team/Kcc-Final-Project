@@ -36,7 +36,7 @@
                     <div class="team-overview-title">
                         <div class="team-title">팀 개요</div>
                         <div class="btn-group">
-                            <button class="">그룹등록</button>
+                            <button class="" onclick="openGroupPopup()">그룹등록</button>
                             <button class="">수정</button>
                             <button class="">삭제</button>
                         </div>
