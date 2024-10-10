@@ -38,10 +38,4 @@ public class ProjectController {
         return "project/dashboard";
     }
 
-    // 대시보드
-    @GetMapping("/wbsList")
-    public String wbs() {
-        return "project/wbsList";
-    }
-
 }

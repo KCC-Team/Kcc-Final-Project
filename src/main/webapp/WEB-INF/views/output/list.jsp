@@ -60,7 +60,7 @@
                             <span class="me-3">폴더: <label class="folder-cnt fw-normal">2</label></span>
                             <span>문서: <label class="docs-cnt fw-normal">3</label></span>
                             <span class="ms-auto d-flex justify-content-end">
-                                <button class="custom-button" type="button">&nbsp;산출물 등록하기&nbsp;</button>&nbsp;&nbsp;&nbsp;
+                                <button class="custom-button file-insert-btn" type="button">&nbsp;산출물 등록하기&nbsp;</button>&nbsp;&nbsp;&nbsp;
                                 <button class="custom-button modify-btn me-2" type="button">&nbsp;<i class="fa-regular fa-folder"></i>&nbsp;&nbsp;위치 편집&nbsp;</button>
                             </span>
                         </div>
@@ -69,7 +69,7 @@
                                 <div class="fir-com-header d-flex justify-content-center align-items-center">
                                     파일명
                                 </div>
-                                <div id="jstree">
+                                <div class="jstree">
                                 </div>
                             </section>
                             <section class="second-component p-3">
@@ -81,7 +81,7 @@
                                         <button class="custom-button" type="button">&nbsp;&nbsp;<i class="modify-icon"></i>&nbsp;&nbsp;수정&nbsp;&nbsp;</button>
                                     </div>
                                     <div>
-                                        <h5 class="text-black">&nbsp;&nbsp;&nbsp;파일명</h5>
+                                        <h5 class="text-black">&nbsp;&nbsp;&nbsp;산출물명</h5>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input-area" value="A 업무 시스템 요구사항 정의서" disabled/>
                                     </div>
                                     <br>
@@ -116,7 +116,8 @@
     </div>
 
     <!-- 동적 파일 상세 모달 -->
-    <jsp:include page="file-detail-modal.jsp" />
+    <jsp:include page="modal/file-detail-modal.jsp" />
+    <jsp:include page="modal/file-insert-modal.jsp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
