@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class CommonCodeSelectList implements Serializable {
+public class CommonCodeSelectListResponseDto implements Serializable {
     private String codeDetailNo;
     private String codeDetailName;
 }

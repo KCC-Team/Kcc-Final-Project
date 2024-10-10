@@ -1,6 +1,6 @@
 package com.kcc.pms.domain.common.controller;
 
-import com.kcc.pms.domain.common.model.dto.CommonCodeSelectList;
+import com.kcc.pms.domain.common.model.dto.CommonCodeSelectListResponseDto;
 import com.kcc.pms.domain.common.service.CommonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@ public class CommonController {
 
     @GetMapping("/getCommonCodeList")
     @ResponseBody
-    public List<CommonCodeSelectList> getCommonCodeList(@RequestParam("commonCodeNo") String commonCodeNo) {
+    public List<CommonCodeSelectListResponseDto> getCommonCodeList(@RequestParam("commonCodeNo") String commonCodeNo) {
         System.out.println(commonCodeNo);
         return commonService.getCommonCodeSelectList(commonCodeNo);
     }

@@ -1,7 +1,7 @@
 package com.kcc.pms.domain.common.service;
 
 import com.kcc.pms.domain.common.mapper.CommonMapper;
-import com.kcc.pms.domain.common.model.dto.CommonCodeSelectList;
+import com.kcc.pms.domain.common.model.dto.CommonCodeSelectListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class CommonServiceImpl implements CommonService {
     private final CommonMapper mapper;
 
     @Override
-    public List<CommonCodeSelectList> getCommonCodeSelectList(String commonCodeNo) {
+    public List<CommonCodeSelectListResponseDto> getCommonCodeSelectList(String commonCodeNo) {
          return mapper.getCommonCodeList(commonCodeNo);
     }
 }
