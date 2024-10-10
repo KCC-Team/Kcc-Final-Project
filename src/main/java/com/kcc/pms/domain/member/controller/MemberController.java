@@ -1,11 +1,13 @@
 package com.kcc.pms.domain.member.controller;
 
+import com.kcc.pms.domain.member.model.dto.GroupMembersResponseDto;
 import com.kcc.pms.domain.member.model.dto.GroupResponseDto;
 import com.kcc.pms.domain.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -27,9 +29,15 @@ public class MemberController {
         return "member/memberRegister";
     }
 
-    @GetMapping("getGroupList")
+    @GetMapping("/getGroupList")
     @ResponseBody
     public List<GroupResponseDto> groupList() {
         return memberService.getGroupList();
+    }
+
+    @GetMapping("/members/groups")
+    @ResponseBody
+    public List<GroupMembersResponseDto> groupMembers(@RequestParam Long groupNo) {
+        return memberService.getGroupMembers(groupNo);
     }
 }

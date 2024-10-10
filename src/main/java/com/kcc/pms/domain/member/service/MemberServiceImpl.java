@@ -1,6 +1,7 @@
 package com.kcc.pms.domain.member.service;
 
 import com.kcc.pms.domain.member.mapper.MemberMapper;
+import com.kcc.pms.domain.member.model.dto.GroupMembersResponseDto;
 import com.kcc.pms.domain.member.model.dto.GroupResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,11 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public List<GroupResponseDto> getGroupList() {
         return buildTree(mapper.getGroupList());
+    }
+
+    @Override
+    public List<GroupMembersResponseDto> getGroupMembers(Long groupNo) {
+        return mapper.getGroupMemberList(groupNo);
     }
 
 
