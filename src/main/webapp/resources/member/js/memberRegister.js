@@ -9,7 +9,7 @@ $(document).ready(function() {
         }
         return node;
     }
-
+    //조직도 가져오기
     $.ajax({
         url: '/projects/getGroupList',
         method: 'GET',
@@ -23,6 +23,26 @@ $(document).ready(function() {
                 'plugins': ["search", "dnd"]
             });
         },
+    });
+
+    //부서 인원 목록 가져오기
+    $('#jstree').on("select_node.jstree", function (e, data) {
+        const selectedNodeId = data.node.id;
+
+        $.ajax({
+            url: "/projects/members/groups",
+            type: 'GET',
+            data: {
+                groupNo: selectedNodeId
+            },
+            success: function(members) {
+                $('#selectedGroupName').text(members[0].groupName);
+                groupmemGrid.setData(members);
+            },
+            error: function(xhr, status, error) {
+                console.error('인원 목록을 가져오는 데 실패했습니다: ', error);
+            }
+        });
     });
 
     // 검색 기능

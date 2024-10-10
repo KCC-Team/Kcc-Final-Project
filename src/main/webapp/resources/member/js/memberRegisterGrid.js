@@ -1,14 +1,13 @@
+var groupmemGrid;
+var prjmemGrid;
+var addedGrid;
+let isEditing = false;
+let addedMembers = [];
 $(document.body).ready(function () {
-    var groupmemGrid;
-    var prjmemGrid;
-    var addedGrid;
-    let isEditing = false;
-    let addedMembers = [];
-
     function updateAddedGrid() {
         addedGrid.setData(addedMembers);
     }
-
+    //프로젝트 권환 공통 코드 가져오기
     function loadAuthCommonCode() {
         return new Promise(function(resolve, reject) {
             $.ajax({
@@ -56,7 +55,7 @@ $(document.body).ready(function () {
     // 편집 버튼
     $('.member-edit-button').on('click', function () {
         var currentText = $(this).text();
-        console.log(currentText);
+
         if (currentText === '편집') {
             isEditing = true;
             $(this).text('저장'); // 텍스트를 '저장'으로 변경
@@ -97,15 +96,15 @@ $(document.body).ready(function () {
             if (!exists) {
                 addedMembers.push({
                     id: member.id,
-                    name: member.name,
+                    name: member.memberName,
                     auth: member.auth ? member.auth : "",
-                    group: "SI 1팀",
-                    position: member.position,
+                    group: member.groupName,
+                    position: member.positionName,
                     pre_st_dt: "",
                     pre_end_dt: "",
                     st_dt: "",
                     end_dt: "",
-                    tech_grd: ""
+                    techGrade: member.techGrade
                 });
             }
         });
@@ -120,30 +119,17 @@ $(document.body).ready(function () {
         showRowSelector: true,
         target: $('[data-ax5grid="groupmemGrid"]'),
         columns: [
-            {key: "name", label: "성명", align: "center"},
-            {key: "position", label: "직위", align: "center" },
+            {key: "memberName", label: "성명", align: "center"},
+            {key: "positionName", label: "직위", align: "center" },
             {key: "email", width: 220, label: "이메일", align: "center"},
-            {key: "participate_yn", width: 70, label: "참여여부",align: "center"}
-
+            {key: "participate_yn", width: 70, label: "참여여부",align: "center"},
+            {key: "techGrade", width: 70, label: "기술등급",align: "center"}
         ],
         page: {
             display: false
         }
     });
-    groupmemGrid.setData([
-        {id: 1, name: "이수호", position: "사원", email: "kcc1@example.com", participate_yn: "Y"},
-        {id: 2, name: "김연호", position: "사원", email: "kcc2@example.com", participate_yn: "Y"},
-        {id: 3, name: "이한희", position: "사원", email: "kcc3@example.com", participate_yn: "N"},
-        {id: 4, name: "홍길동", position: "사원", email: "kcc4@example.com", participate_yn: "N"},
-        {id: 5, name: "이수호", position: "사원", email: "kcc1@example.com", participate_yn: "Y"},
-        {id: 6, name: "김연호", position: "사원", email: "kcc2@example.com", participate_yn: "Y"},
-        {id: 7, name: "이한희", position: "사원", email: "kcc3@example.com", participate_yn: "N"},
-        {id: 8, name: "홍길동", position: "사원", email: "kcc4@example.com", participate_yn: "N"},
-        {id: 9, name: "이수호", position: "사원", email: "kcc1@example.com", participate_yn: "Y"},
-        {id: 10, name: "김연호", position: "사원", email: "kcc2@example.com", participate_yn: "Y"},
-        {id: 11, name: "이한희", position: "사원", email: "kcc3@example.com", participate_yn: "N"},
-        {id: 12, name: "홍길동", position: "사원", email: "kcc4@example.com", participate_yn: "N"}
-    ]);
+
 
     function initGrid() {
         loadAuthCommonCode().then(function(commonCodeOptions) {
@@ -235,7 +221,7 @@ $(document.body).ready(function () {
                             }
                         }
                     },
-                    {key: "tech_grd", width: 70, label: "기술등급", align: "center"}
+                    {key: "techGrade", width: 70, label: "기술등급", align: "center"}
                 ],
                 page: {
                     display: false

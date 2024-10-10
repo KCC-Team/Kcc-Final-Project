@@ -11,5 +11,16 @@
         FROM usergroup
     </select>
 
+    <select id="getGroupMemberList" resultType="com.kcc.pms.domain.member.model.dto.GroupMembersResponseDto">
+        select m.grp_no, m.mem_no as id, m.mem_nm as memberName, m.phone_no as phoneNo , m.email, tech_cd.cd_dtl_nm as techGrade,
+               pos_cd.cd_dtl_nm as positionName, g.grp_nm as groupName
+        from member m, codedetail tech_cd, codedetail pos_cd, usergroup g
+        where m.tech_grd_cd = tech_cd.cd_dtl_no
+          and m.pos_nm = pos_cd.cd_dtl_no
+          and m.grp_no = g.grp_no
+          and m.grp_no = #{groupNo}
+        order by pos_cd.order_no, tech_cd.order_no
+    </select>
 
 </mapper>
+
