@@ -7,7 +7,31 @@ $(document.body).ready(function () {
 
     function updateAddedGrid() {
         addedGrid.setData(addedMembers);
+    }
 
+    function loadAuthCommonCode() {
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                url: '/getCommonCodeList',
+                type: 'GET',
+                data: {
+                    commonCodeNo: 'PMS002'
+                },
+                success: function(response) {
+                    var options = response.map(function(item) {
+                        return {
+                            CD: item.codeDetailNo,
+                            NM: item.codeDetailName
+                        };
+                    });
+                    resolve(options);
+                },
+                error: function(xhr, status, error) {
+                    console.error("공통 코드 로드 오류: ", error);
+                    reject(error);
+                }
+            });
+        });
     }
 
     $('#project_member_total').on('click', function() {
@@ -121,98 +145,108 @@ $(document.body).ready(function () {
         {id: 12, name: "홍길동", position: "사원", email: "kcc4@example.com", participate_yn: "N"}
     ]);
 
-
-
-    addedGrid = new ax5.ui.grid();
-    addedGrid.setConfig({
-        showRowSelector: true,
-        target: $('[data-ax5grid="added-grid"]'),
-        columns: [
-            {key: "name", label: "성명", align: "center"},
-            {key: "auth", label: "프로젝트권환", align: "center", editor: {
-                    type: "select", config: {
-                        columnKeys: {
-                            optionValue: "CD", optionText: "NM"
+    function initGrid() {
+        loadAuthCommonCode().then(function(commonCodeOptions) {
+            addedGrid = new ax5.ui.grid();
+            addedGrid.setConfig({
+                showRowSelector: true,
+                target: $('[data-ax5grid="added-grid"]'),
+                columns: [
+                    {key: "name", label: "성명", align: "center"},
+                    {
+                        key: "auth",
+                        label: "프로젝트권한",
+                        align: "center",
+                        editor: {
+                            type: "select",
+                            config: {
+                                columnKeys: {
+                                    optionValue: "CD",
+                                    optionText: "NM"
+                                },
+                                options: commonCodeOptions
+                            },
+                            disabled: function () {
+                                return !isEditing;
+                            }
                         },
-                        options: [
-                            {CD: "M", NM: "M: Man"},
-                            {CD: "D", NM: "D: Daughter"},
-                            {CD: "S", NM: "S: Son"},
-                            {CD: "W", NM: "W: Wife"}
-                        ]
+                        formatter: function() {
+                            var selectedOption = commonCodeOptions.find(function(option) {
+                                return option.CD === this.value;
+                            }.bind(this));
+                            return selectedOption ? selectedOption.NM : this.value;
+                        }
                     },
-                    disabled: function () {
-                        return !isEditing; // isEditing 상태를 참조하여 에디터 활성화/비활성화
-                    }
+                    {key: "group", width: 100, label: "소속", align: "center"},
+                    {key: "position", width: 70, label: "직위", align: "center"},
+                    {key: "pre_st_dt", width: 100, label: "예정시작일", align: "center", editor: {
+                            type: "date",
+                            config: {
+                                content: {
+                                    config: {
+                                        mode: "year", selectMode: "day"
+                                    }
+                                }
+                            },
+                            disabled: function () {
+                                return !isEditing;
+                            }
+                        }
+                    },
+                    {key: "pre_end_dt", width: 100, label: "예정종료일", align: "center", editor: {
+                            type: "date",
+                            config: {
+                                content: {
+                                    config: {
+                                        mode: "year", selectMode: "day"
+                                    }
+                                }
+                            },
+                            disabled: function () {
+                                return !isEditing;
+                            }
+                        }
+                    },
+                    {key: "st_dt", width: 100, label: "참여시작일", align: "center", editor: {
+                            type: "date",
+                            config: {
+                                content: {
+                                    config: {
+                                        mode: "year", selectMode: "day"
+                                    }
+                                }
+                            },
+                            disabled: function () {
+                                return !isEditing;
+                            }
+                        }
+                    },
+                    {key: "end_dt", width: 100, label: "참여종료일", align: "center", editor: {
+                            type: "date",
+                            config: {
+                                content: {
+                                    config: {
+                                        mode: "year", selectMode: "day"
+                                    }
+                                }
+                            },
+                            disabled: function () {
+                                return !isEditing;
+                            }
+                        }
+                    },
+                    {key: "tech_grd", width: 70, label: "기술등급", align: "center"}
+                ],
+                page: {
+                    display: false
                 }
-            },
-            {key: "group", width: 100, label: "소속", align: "center"},
-            {key: "position", width: 70, label: "직위",align: "center"},
-            {key: "pre_st_dt", width: 100, label: "예정시작일",align: "center", editor: {
-                    type: "date",
-                    config: {
-                        content: {
-                            config: {
-                                mode: "year", selectMode: "day"
-                            }
-                        }
-                    },
-                    disabled: function () {
-                        return !isEditing; // isEditing 상태를 참조하여 에디터 활성화/비활성화
-                    }
-                },
+            });
+        }).catch(function(error) {
+            console.error("그리드 초기화 오류: ", error);
+        });
+    }
 
-            },
-            {key: "pre_end_dt", width: 100, label: "예정종료일",align: "center", editor: {
-                    type: "date",
-                    config: {
-                        content: {
-                            config: {
-                                mode: "year", selectMode: "day"
-                            }
-                        }
-                    },
-                    disabled: function () {
-                        return !isEditing; // isEditing 상태를 참조하여 에디터 활성화/비활성화
-                    }
-                },
-
-            },
-            {key: "st_dt", width: 100, label: "참여시작일",align: "center", editor: {
-                    type: "date",
-                    config: {
-                        content: {
-                            config: {
-                                mode: "year", selectMode: "day"
-                            }
-                        }
-                    },
-                    disabled: function () {
-                        return !isEditing; // isEditing 상태를 참조하여 에디터 활성화/비활성화
-                    }
-                },
-            },
-            {key: "end_dt", width: 100, label: "참여종료일",align: "center", editor: {
-                    type: "date",
-                    config: {
-                        content: {
-                            config: {
-                                mode: "year", selectMode: "day"
-                            }
-                        }
-                    },
-                    disabled: function () {
-                        return !isEditing; // isEditing 상태를 참조하여 에디터 활성화/비활성화
-                    }
-                },
-
-            },
-            {key: "tech_grd", width: 70, label: "기술등급",align: "center"}
-        ],
-        page: {
-            display: false
-        }
-    });
+    initGrid();
 
     prjmemGrid = new ax5.ui.grid();
     prjmemGrid.setConfig({
