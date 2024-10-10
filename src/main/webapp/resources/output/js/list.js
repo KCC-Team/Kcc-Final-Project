@@ -61,7 +61,7 @@ $(function () {
     let jsTreeData = convertToJsTreeData(treeData);
 
     // jsTree 초기화
-    $('#jstree').jstree({
+    $('.jstree').jstree({
         'core': {
             'data': jsTreeData,
             "themes" : { "stripes" : true },
@@ -79,12 +79,10 @@ $(function () {
     });
 
     // 노드 이동 이벤트 핸들러
-    $('#jstree').on("move_node.jstree", function (e, data) {
+    $('.jstree').on("move_node.jstree", function (e, data) {
         let movedNode = data.node;
         let newParentId = data.parent;
         updateTreeData(movedNode, newParentId);
-
-        console.log('Updated treeData:', treeData);
     });
 
     // treeData 업데이트 함수
@@ -149,26 +147,26 @@ $(function () {
 
         if (isEditing) {
             // 드래그 앤 드롭 활성화
-            $('#jstree').jstree(true).settings.dnd.is_draggable = function () { return true; };
+            $('.jstree').jstree(true).settings.dnd.is_draggable = function () { return true; };
         } else {
             // 드래그 앤 드롭 비활성화
-            $('#jstree').jstree(true).settings.dnd.is_draggable = function () { return false; };
+            $('.jstree').jstree(true).settings.dnd.is_draggable = function () { return false; };
         }
     });
 
     // 초기 상태에서 드래그 앤 드롭 비활성화
-    $('#jstree').jstree(true).settings.dnd.is_draggable = function () { return false; };
+    $('.jstree').jstree(true).settings.dnd.is_draggable = function () { return false; };
 
     $('#search').on('keypress', function(e) {
         if (e.which === 13) { // 엔터 키 코드
             let v = $(this).val();
-            $('#jstree').jstree(true).search(v);
+            $('.jstree').jstree(true).search(v);
         }
     });
 
     $('#search-btn').on('click', function() {
         let v = $('#search').val();
-        $('#jstree').jstree(true).search(v);
+        $('.jstree').jstree(true).search(v);
     });
 });
 
@@ -203,7 +201,7 @@ $(function () {
                 width: 180,
                 align: "center",
                 formatter: function () {
-                    return `<button onclick="openModal('${this.item.fileName}', gridData)" class="btn-link">${this.item.fileName}</button>`;
+                    return `<button onclick="openDetailModal('${this.item.fileName}', gridData)" class="btn-link">${this.item.fileName}</button>`;
                 }
             },
             {key: "fileType", label: "파일형식", width: 80, align: "center"},
@@ -241,46 +239,82 @@ $(function () {
         // 업로드 로직 구현
         alert(fileName + ' 업로드 버튼 클릭됨');
     });
+
+    $('.file-insert-btn').on('click', function() {
+        openInsertModal();
+    });
 });
 
-function openModal(fileName, gridData) {
-    // 파일명에 따라 파일 데이터를 가져오는 로직 구현
-    // 예시를 위해 gridData에서 해당 파일을 찾습니다.
-    const fileData = gridData.find(item => item.fileName === fileName);
+// 산출물 파일 상세 모달
+function loadVersionHistory(fileData) {
+    const versionHistory = [
+        { fileName: fileData.fileName + " 5차", fileSize: "2.01 MB", registeredOn: "2024-02-14", fileType: "xls/xlsx", version: "0.5" },
+        { fileName: fileData.fileName + " 4차", fileSize: "1.92 MB", registeredOn: "2024-02-07", fileType: "xls/xlsx", version: "0.4" },
+        { fileName: fileData.fileName + " 3차", fileSize: "1.77 MB", registeredOn: "2024-01-29", fileType: "xls/xlsx", version: "0.3" },
+        { fileName: fileData.fileName + " 2차", fileSize: "1.58 MB", registeredOn: "2024-01-11", fileType: "xls/xlsx", version: "0.2" },
+        { fileName: fileData.fileName + " 초안", fileSize: "1.26 MB", registeredOn: "2024-01-03", fileType: "xls/xlsx", version: "0.1" }
+    ];
 
+    const versionHistoryContainer = document.getElementById('versionHistory');
+    versionHistoryContainer.innerHTML = '';
+
+    versionHistory.forEach(version => {
+        const card = document.createElement('div');
+        card.className = 'card mb-2 shadow-sm';
+        card.innerHTML = `
+            <div class="card-body p-2">
+                <div class="row d-flex justify-content-center">
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex justify-content-center me-4">
+                            <label class="card-title me-1">파일명</label>
+                            <span class="card-text">${version.fileName}</span>
+                        </div>
+                        <div class="d-flex justify-content-center me-4">
+                            <label class="card-title me-1">버전</label>
+                            <span class="card-text">${version.version}</span>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <label class="card-title me-1">등록일</label>
+                            <span class="card-text">${version.registeredOn}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="me-4">
+                        <label class="card-title me-1">크기</label>
+                        <span class="card-text">${version.fileSize}</span>
+                    </div>
+                    <div class="me-4">
+                        <label class="card-title me-1">형식</label>
+                        <span class="card-text">${version.fileType}</span>
+                    </div>
+                    <div>
+                        <button class="green-btn">&nbsp;&nbsp;&nbsp;다운로드&nbsp;&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+
+            </div>
+        `;
+        versionHistoryContainer.appendChild(card);
+    });
+}
+
+function openDetailModal(fileName, gridData) {
+    const fileData = gridData.find(item => item.fileName === fileName);
     if (!fileData) {
         alert('파일 정보를 찾을 수 없습니다.');
         return;
     }
 
-    // 파일 정보를 모달에 표시
     $('#fileName').text(fileData.fileName);
     $('#fileSize').text(fileData.size);
     $('#fileVersion').text(fileData.version);
     $('#fileType').text(fileData.fileType);
 
-    // 버전 히스토리를 가져오는 로직 구현
-    // 여기서는 예시로 하드코딩된 데이터를 사용합니다.
-    const versionHistory = [
-        { fileName: fileData.fileName + " 3차", fileSize: "1.77 MB", registeredOn: "2024-01-29", fileType: "xls/xlsx" },
-        { fileName: fileData.fileName + " 2차", fileSize: "1.58 MB", registeredOn: "2024-01-11", fileType: "xls/xlsx" },
-        { fileName: fileData.fileName + " 초안", fileSize: "1.26 MB", registeredOn: "2024-01-03", fileType: "xls/xlsx" }
-    ];
+    loadVersionHistory(fileData);
+    $('#detailModal').modal('show');
+}
 
-    const versionHistoryTable = $('#versionHistory');
-    versionHistoryTable.empty(); // 기존 내용 삭제
-
-    versionHistory.forEach(function(item) {
-        const row = `
-            <tr>
-                <td>${item.fileName}</td>
-                <td>${item.fileSize}</td>
-                <td>${item.registeredOn}</td>
-                <td>${item.fileType}</td>
-            </tr>
-        `;
-        versionHistoryTable.append(row);
-    });
-
-    $('#fileModal').modal('show');
+function openInsertModal() {
+    $('#insertModal').modal('show');
 }

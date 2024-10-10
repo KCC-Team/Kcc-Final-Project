@@ -331,3 +331,17 @@ body {
 .red-btn:hover {
     background-color: #D43C3C;
 }
+
+.save-button {
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+}

@@ -830,8 +830,8 @@ textarea.input-lg,.input-group-lg>textarea.form-control,.input-group-lg>textarea
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder][data-ax5grid-text-align="center"] {
     text-align: center;
-    font-size: 15px;
-    /*font-weight: bold;*/
+    font-size: 12px;
+    font-weight: bold;
     color: #5c5c5c;
 }
 
