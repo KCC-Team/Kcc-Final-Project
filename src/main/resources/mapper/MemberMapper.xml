@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- mapper DTD 선언 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kcc.pms.domain.member.mapper.MemberMapper">
+    <cache />
+
+    <select id="getGroupList" resultType="com.kcc.pms.domain.member.model.dto.GroupResponseDto">
+        SELECT GRP_NO as id, GRP_NM as text, PAR_GRP_NO as parentId
+        FROM usergroup
+    </select>
+
+
+</mapper>
