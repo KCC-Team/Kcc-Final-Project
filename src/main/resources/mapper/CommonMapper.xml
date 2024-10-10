@@ -6,7 +6,7 @@
 <mapper namespace="com.kcc.pms.domain.common.mapper.CommonMapper">
     <cache />
 
-    <select id="getCommonCodeList" parameterType="string" resultType="com.kcc.pms.domain.common.model.dto.CommonCodeSelectList">
+    <select id="getCommonCodeList" parameterType="string" resultType="com.kcc.pms.domain.common.model.dto.CommonCodeSelectListResponseDto">
         select cd_dtl_no as codeDetailNo, cd_dtl_nm as codeDetailName
         from codedetail
         where common_cd_no = #{commonCodeNo}
